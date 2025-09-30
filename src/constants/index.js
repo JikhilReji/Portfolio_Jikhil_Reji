@@ -186,14 +186,14 @@ export const myProjects = [
   },
   {
     id: 6,
-    title: "Online Learning Platform",
+    title: "EcoForecast",
     description:
-      "A web application that allows users to enroll in courses, watch video lectures, and take quizzes.",
+      "Developed a data-driven system for analyzing and forecasting climate change patterns using NASA datasets. The project applied machine learning and advanced visualization techniques to model temperature variations, carbon emissions, and sea-level rise, supporting better understanding of global risk indices and future climate impact.",
     subDescription: [
-      "Built using Blazor WebAssembly for a seamless SPA experience.",
-      "Implemented video streaming with Azure Media Services.",
-      "Added a quiz system with dynamic question generation and real-time grading.",
-      "Integrated Stripe API for secure payment processing.",
+      "Processed and cleaned large-scale climate datasets (temperature, emissions, sea levels, global risk indices) for reliable analysis.",
+      "Implemented predictive models using Linear Regression and evaluated results with error metrics to validate performance.",
+      "Designed heatmaps and visual analytics with Matplotlib, Seaborn, and Tableau to highlight long-term climate trends.",
+      "Integrated machine learning workflows in Google Colab, ensuring reproducibility and efficient experimentation.",
     ],
     href: "",
     logo: "",
@@ -201,22 +201,22 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "Blazor",
+        name: "Python (Pandas, NumPy, Scikit-learn)",
         path: "/assets/logos/blazor.svg",
       },
       {
         id: 2,
-        name: "Azure",
+        name: "Matplotlib & Seaborn",
         path: "/assets/logos/azure.svg",
       },
       {
         id: 3,
-        name: "Stripe",
+        name: "Google Colab / Jupyter",
         path: "/assets/logos/stripe.svg",
       },
       {
         id: 4,
-        name: "TailwindCSS",
+        name: "Tableau",
         path: "/assets/logos/tailwindcss.svg",
       },
     ],
