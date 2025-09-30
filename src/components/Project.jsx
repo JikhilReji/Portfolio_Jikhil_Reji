@@ -9,6 +9,7 @@ const [isHidden, setIsHidden] = useState(false);
   space-y-14 sm:flex sm:space-y-0"
   onMouseEnter={() => setPreview(image)}
   onMouseLeave={() => setPreview(null)}
+  onTouchStart={() => setPreview(image)} // For touch devices (updated by me)
   >
   <div>
     <p className="text-2xl">{title}</p>
@@ -18,7 +19,11 @@ const [isHidden, setIsHidden] = useState(false);
             ))}
     </div>
  </div>
-       <button  onClick={() => setIsHidden(true)} 
+       <button  onClick={() => {
+       setIsHidden(true);
+      setPreview(null);// Hide preview when modal is opened (Updated by me)
+      } }
+
        className="flex items-center gap-1 cursor-pointer 
        hover-animation" >
         Read More
