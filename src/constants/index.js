@@ -243,39 +243,66 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "Software Developer",
-    job: "Security & Defense Projects",
-    date: "2021-2023",
-    contents: [
-      "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-      "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-      "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-      "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
-    ],
-  },
-  {
-    title: "Back-End Developer",
-    job: "Car Manufacture",
-    date: "2023-2024",
-    contents: [
-      "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-      "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-      "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-      "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-      "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
-    ],
-  },
-  {
+    date: "2024 – Present",
     title: "Freelance Developer",
-    job: "Self-Employed",
-    date: "2025-Present",
+    company: "Self-Employed",
     contents: [
-      "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-      "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+      "Developed e-commerce websites using React, Node.js, and modern web technologies.",
+      "Built Python-based automation programs to improve client efficiency.",
+      "Managed deployments and hosting environments for client websites.",
+      "Optimized databases and server-side performance."
     ],
   },
+  {
+    date: "04/2022 – 10/2022",
+    title: "Frontend Developer",
+    company: "Seclance",
+    location: "Bangalore, India",
+    contents: [
+      "Designed and developed responsive user interfaces and web resources.",
+      "Integrated front-end components with server-side logic and APIs.",
+      "Optimized website performance and ensured cross-browser compatibility.",
+      "Assisted in minor deployment and troubleshooting tasks."
+    ],
+  },
+  {
+    date: "08/2021 – 02/2022",
+    title: "Associate — Cloud Infrastructure Services",
+    company: "UST",
+    location: "Kerala, India",
+    contents: [
+      "Managed IT tickets according to ITIL practices and SLAs.",
+      "Built React components and integrated APIs while supporting AWS deployments.",
+      "Monitored system health and assisted with server maintenance.",
+      "Participated in team initiatives to optimize processes."
+    ],
+  },
+  {
+    date: "04/2021 – 06/2021",
+    title: "Software Developer",
+    company: "KABS Global Solutions",
+    location: "Ernakulam, Kerala, India",
+    contents: [
+      "Developed cloud-based LMS system with Node.js, JavaScript, and MySQL.",
+      "Built dynamic web apps and admin dashboards for better usability.",
+      "Deployed applications to cloud environments and assisted with DB maintenance."
+    ],
+  },
+  {
+    date: "07/2020 – 07/2021",
+    title: "Team Lead - Student IT Initiative",
+    company: "NIMIT",
+    location: "Kerala, India",
+    contents: [
+      "Led Android application development and web LMS projects.",
+      "Mentored student developers and coordinated project delivery.",
+      "Assisted IT team in college events, handling visuals, deployment, and server setup."
+    ],
+  }
 ];
+
+
+
 export const reviews = [
   {
     name: "Jack",
