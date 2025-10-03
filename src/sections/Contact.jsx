@@ -28,26 +28,26 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      console.log("From submitted:", formData);
+      console.log("Form submitted:", formData);
       await emailjs.send(
-        "service_79b0nyj",
-        "template_17us8im",
+        "service_xyqf2xh",
+        "template_3obv2nm",
         {
           from_name: formData.name,
-          to_name: "Ali",
+          to_name: "Jikhil",
           from_email: formData.email,
-          to_email: "AliSanatiDev@gmail.com",
+          to_email: "jikhilreji@gmail.com",
           message: formData.message,
         },
-        "pn-Bw_mS1_QQdofuV"
+        "0fQ01HRxC20kTxLDk"
       );
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "You message has been sent!");
+      showAlertMessage("Success", "Your message has been sent!");
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-      showAlertMessage("danger", "Somthing went wrong!");
+      showAlertMessage("Danger", "Somthing went wrong!");
     }
   };
   return (
@@ -65,7 +65,7 @@ const Contact = () => {
           <h2 className="text-heading">Let's Talk</h2>
           <p className="font-normal text-neutral-400">
             Whether you're loking to build a new website, improve your existing
-            platform, or bring a unique project to life, I'm here to help
+            platform, or bring a unique project to life, I'm here to help.
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
@@ -120,7 +120,9 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-1 py-3 text-lg text-center rounded-md cursor-pointer bg-radial from-lavender to-royal hover-animation"
+            className="w-full px-1 py-3 text-lg text-center 
+            rounded-md cursor-pointer bg-radial from-lavender
+             to-royal hover-animation"
           >
             {!isLoading ? "Send" : "Sending..."}
           </button>

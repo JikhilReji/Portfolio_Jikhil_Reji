@@ -29,8 +29,11 @@ export default function Marquee({
                 ? "animate-marquee-vertical flex-col"
                 : "animate-marquee flex-row",
               pauseOnHover && "group-hover:[animation-play-state:paused]",
-              reverse && "[animation-direction:reverse]"
-            )}
+              reverse && 
+              {
+               "[animation-direction:reverse]": reverse,
+              }
+              )}
           >
             {children}
           </div>

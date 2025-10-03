@@ -24,7 +24,7 @@ export function Frameworks() {
     items-center justify-center">
       <OrbitingCircles iconSize={40}>
         {skills.map((skill, index) => (
-          <Icon key={index} src={`assets/logos/${skill}.svg`} />
+          <Icon key={index} src={`/assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
       <OrbitingCircles 
@@ -34,7 +34,7 @@ export function Frameworks() {
       speed={2}
       >
          {skills.reverse().map((skill, index) => (
-          <Icon key={index} src={`assets/logos/${skill}.svg`} />
+          <Icon key={index} src={`/assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
     </div>

@@ -4,22 +4,27 @@ function Navigation() {
   return (
     <ul className="nav-ul">
       <li className="nav-li">
-        <a className="nav-link" href="#home">
+        <a className="nav-link" href="#Home">
           Home
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#about">
+        <a className="nav-link" href="#About">
           About
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#work">
+        <a className="nav-link" href="#Experiences">
           Work
         </a>
       </li>
+       <li className="nav-li">
+        <a className="nav-link" href="#Projects">
+          Projects
+        </a>
+      </li>
       <li className="nav-li">
-        <a className="nav-link" href="#contact">
+        <a className="nav-link" href="#Contact">
           Contact
         </a>
       </li>
@@ -47,7 +52,7 @@ const [isOpen, setIsOpen] = useState(false);
            >
 
             <img 
-            src={isOpen ?"assets/close.svg" : "assets/menu.svg"} 
+            src={isOpen ?"/assets/close.svg" : "/assets/menu.svg"} 
             className="w-6 h-6" alt="toggle"
             />         
              </button>
