@@ -7,40 +7,13 @@ import { reviews } from "../constants";
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-// ReviewCard with long-press support
-const ReviewCard = ({
-  img,
-  name,
-  username,
-  body,
-  isActive,
-  onLongPressStart,
-  onLongPressEnd,
-}) => {
-  let touchTimeout = null;
-
-  const handleTouchStart = (e) => {
-    e.preventDefault(); // prevent text selection
-    touchTimeout = setTimeout(() => {
-      onLongPressStart?.();
-    }, 400); // long press duration (ms)
-  };
-
-  const handleTouchEnd = () => {
-    clearTimeout(touchTimeout);
-    onLongPressEnd?.();
-  };
-
-  const handleTouchMove = () => {
-    clearTimeout(touchTimeout); // cancel long press if user scrolls
-    onLongPressEnd?.();
-  };
-
+// ReviewCard with proper mobile pause handling
+const ReviewCard = ({ img, name, username, body, isActive, onTouchStart, onTouchEnd }) => {
   return (
     <figure
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-      onTouchMove={handleTouchMove}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      onTouchMove={onTouchEnd} // cancel pause if user scrolls
       className={twMerge(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-50/[.1] bg-gradient-to-r bg-indigo to-storm hover:bg-royal hover-animation select-none",
         isActive && "bg-royal"
@@ -64,7 +37,6 @@ const ReviewCard = ({
   );
 };
 
-// Main Testimonial component
 export default function Testimonial() {
   const marqueeRef1 = useRef(null);
   const marqueeRef2 = useRef(null);
@@ -72,22 +44,22 @@ export default function Testimonial() {
   const [activeCardRow1, setActiveCardRow1] = useState(null);
   const [activeCardRow2, setActiveCardRow2] = useState(null);
 
-  // Row 1 handlers
-  const handleLongPressStartRow1 = (index) => {
+  // Mobile touch handling for row 1
+  const handleTouchStartRow1 = (index) => {
     setActiveCardRow1(index);
     marqueeRef1.current?.pause();
   };
-  const handleLongPressEndRow1 = () => {
+  const handleTouchEndRow1 = () => {
     setActiveCardRow1(null);
     marqueeRef1.current?.play();
   };
 
-  // Row 2 handlers
-  const handleLongPressStartRow2 = (index) => {
+  // Mobile touch handling for row 2
+  const handleTouchStartRow2 = (index) => {
     setActiveCardRow2(index);
     marqueeRef2.current?.pause();
   };
-  const handleLongPressEndRow2 = () => {
+  const handleTouchEndRow2 = () => {
     setActiveCardRow2(null);
     marqueeRef2.current?.play();
   };
@@ -104,8 +76,8 @@ export default function Testimonial() {
               key={review.username}
               {...review}
               isActive={activeCardRow1 === index}
-              onLongPressStart={() => handleLongPressStartRow1(index)}
-              onLongPressEnd={handleLongPressEndRow1}
+              onTouchStart={() => handleTouchStartRow1(index)}
+              onTouchEnd={handleTouchEndRow1}
             />
           ))}
         </Marquee>
@@ -117,8 +89,8 @@ export default function Testimonial() {
               key={review.username}
               {...review}
               isActive={activeCardRow2 === index}
-              onLongPressStart={() => handleLongPressStartRow2(index)}
-              onLongPressEnd={handleLongPressEndRow2}
+              onTouchStart={() => handleTouchStartRow2(index)}
+              onTouchEnd={handleTouchEndRow2}
             />
           ))}
         </Marquee>
