@@ -7,15 +7,16 @@ import { reviews } from "../constants";
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-// ReviewCard component
+// ReviewCard with proper mobile pause handling
 const ReviewCard = ({ img, name, username, body, isActive, onTouchStart, onTouchEnd }) => {
   return (
     <figure
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
+      onTouchMove={onTouchEnd} // cancel pause if user scrolls
       className={twMerge(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-50/[.1] bg-gradient-to-r bg-indigo to-storm hover:bg-royal hover-animation select-none",
-        isActive && "bg-royal" // Only the touched card turns blue
+        isActive && "bg-royal"
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -36,18 +37,15 @@ const ReviewCard = ({ img, name, username, body, isActive, onTouchStart, onTouch
   );
 };
 
-// Main Testimonial component
 export default function Testimonial() {
   const marqueeRef1 = useRef(null);
   const marqueeRef2 = useRef(null);
 
-  // Track which card is active in each row
   const [activeCardRow1, setActiveCardRow1] = useState(null);
   const [activeCardRow2, setActiveCardRow2] = useState(null);
 
-  // Touch handlers for row 1
-  const handleTouchStartRow1 = (index, e) => {
-    e.preventDefault(); // prevent scrolling
+  // Mobile touch handling for row 1
+  const handleTouchStartRow1 = (index) => {
     setActiveCardRow1(index);
     marqueeRef1.current?.pause();
   };
@@ -56,9 +54,8 @@ export default function Testimonial() {
     marqueeRef1.current?.play();
   };
 
-  // Touch handlers for row 2
-  const handleTouchStartRow2 = (index, e) => {
-    e.preventDefault();
+  // Mobile touch handling for row 2
+  const handleTouchStartRow2 = (index) => {
     setActiveCardRow2(index);
     marqueeRef2.current?.pause();
   };
@@ -79,7 +76,7 @@ export default function Testimonial() {
               key={review.username}
               {...review}
               isActive={activeCardRow1 === index}
-              onTouchStart={(e) => handleTouchStartRow1(index, e)}
+              onTouchStart={() => handleTouchStartRow1(index)}
               onTouchEnd={handleTouchEndRow1}
             />
           ))}
@@ -92,7 +89,7 @@ export default function Testimonial() {
               key={review.username}
               {...review}
               isActive={activeCardRow2 === index}
-              onTouchStart={(e) => handleTouchStartRow2(index, e)}
+              onTouchStart={() => handleTouchStartRow2(index)}
               onTouchEnd={handleTouchEndRow2}
             />
           ))}
