@@ -25,12 +25,16 @@ const Hero = () => {
       >
         <Canvas camera={{ position: [0, 1, 3] }}>
           <Suspense fallback={<Loader />}>
-            <Float>
-              <Astronaut 
-                scale={isMobile ? 0.23 : 0.3} 
-                position={isMobile ? [0, -1.5, 0] : [1.3, -1, 0]} 
-              />
-            </Float>
+        <Float
+  floatIntensity={isMobile ? 0.2 : 1}      // smaller float on mobile
+  rotationIntensity={isMobile ? 0.05 : 1}  // subtle rotation on mobile
+  speed={isMobile ? 0.2 : 1}               // slower float on mobile
+>
+  <Astronaut
+    scale={isMobile ? 0.23 : 0.3}
+    position={isMobile ? [0, -1.5, 0] : [1.3, -1, 0]}
+  />
+</Float>
 
             {/* Conditionally enable interactive controls only on desktop */}
             {!isMobile && (
