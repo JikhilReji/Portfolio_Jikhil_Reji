@@ -7,11 +7,12 @@ import { reviews } from "../constants";
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-// Updated ReviewCard component with touch support
+// Updated ReviewCard with mobile touch support
 const ReviewCard = ({ img, name, username, body, onTouchStart, onTouchEnd }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const handleTouchStart = () => {
+  const handleTouchStart = (e) => {
+    e.preventDefault(); // Prevent scrolling / text selection
     setIsActive(true);
     if (onTouchStart) onTouchStart();
   };
@@ -26,8 +27,8 @@ const ReviewCard = ({ img, name, username, body, onTouchStart, onTouchEnd }) => 
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       className={twMerge(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-50/[.1] bg-gradient-to-r bg-indigo to-storm hover:bg-royal hover-animation",
-        isActive && "bg-royal" // simulate hover color on touch
+        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-50/[.1] bg-gradient-to-r bg-indigo to-storm hover:bg-royal hover-animation select-none",
+        isActive && "bg-royal" // Only the touched card turns blue
       )}
     >
       <div className="flex flex-row items-center gap-2">
