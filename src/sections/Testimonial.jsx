@@ -7,25 +7,12 @@ import { reviews } from "../constants";
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-// Updated ReviewCard with mobile touch support
-const ReviewCard = ({ img, name, username, body, onTouchStart, onTouchEnd }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleTouchStart = (e) => {
-    e.preventDefault(); // Prevent scrolling / text selection
-    setIsActive(true);
-    if (onTouchStart) onTouchStart();
-  };
-
-  const handleTouchEnd = () => {
-    setIsActive(false);
-    if (onTouchEnd) onTouchEnd();
-  };
-
+// ReviewCard component
+const ReviewCard = ({ img, name, username, body, isActive, onTouchStart, onTouchEnd }) => {
   return (
     <figure
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
       className={twMerge(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-50/[.1] bg-gradient-to-r bg-indigo to-storm hover:bg-royal hover-animation select-none",
         isActive && "bg-royal" // Only the touched card turns blue
@@ -54,15 +41,29 @@ export default function Testimonial() {
   const marqueeRef1 = useRef(null);
   const marqueeRef2 = useRef(null);
 
-  // Pause both marquees on touch start
-  const handleTouchStart = () => {
+  // Track which card is active in each row
+  const [activeCardRow1, setActiveCardRow1] = useState(null);
+  const [activeCardRow2, setActiveCardRow2] = useState(null);
+
+  // Touch handlers for row 1
+  const handleTouchStartRow1 = (index, e) => {
+    e.preventDefault(); // prevent scrolling
+    setActiveCardRow1(index);
     marqueeRef1.current?.pause();
-    marqueeRef2.current?.pause();
+  };
+  const handleTouchEndRow1 = () => {
+    setActiveCardRow1(null);
+    marqueeRef1.current?.play();
   };
 
-  // Resume both marquees on touch end
-  const handleTouchEnd = () => {
-    marqueeRef1.current?.play();
+  // Touch handlers for row 2
+  const handleTouchStartRow2 = (index, e) => {
+    e.preventDefault();
+    setActiveCardRow2(index);
+    marqueeRef2.current?.pause();
+  };
+  const handleTouchEndRow2 = () => {
+    setActiveCardRow2(null);
     marqueeRef2.current?.play();
   };
 
@@ -73,24 +74,26 @@ export default function Testimonial() {
       <div className="relative flex flex-col items-center justify-center w-full mt-12 overflow-hidden">
         {/* First row */}
         <Marquee ref={marqueeRef1} pauseOnHover className="[--duration:20s]">
-          {firstRow.map((review) => (
+          {firstRow.map((review, index) => (
             <ReviewCard
               key={review.username}
               {...review}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
+              isActive={activeCardRow1 === index}
+              onTouchStart={(e) => handleTouchStartRow1(index, e)}
+              onTouchEnd={handleTouchEndRow1}
             />
           ))}
         </Marquee>
 
         {/* Second row */}
         <Marquee ref={marqueeRef2} reverse pauseOnHover className="[--duration:20s]">
-          {secondRow.map((review) => (
+          {secondRow.map((review, index) => (
             <ReviewCard
               key={review.username}
               {...review}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
+              isActive={activeCardRow2 === index}
+              onTouchStart={(e) => handleTouchStartRow2(index, e)}
+              onTouchEnd={handleTouchEndRow2}
             />
           ))}
         </Marquee>
