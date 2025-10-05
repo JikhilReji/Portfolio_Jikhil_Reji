@@ -3,134 +3,100 @@ import Card from "../components/Card";
 import { Globe } from "../components/globe";
 import SwipeActionButton from "../components/SwipeActionButton";
 import { Frameworks } from "../components/Frameworks";
+import AvatarWithPopup from "../components/AvatarWithPopup";
+
 const About = () => {
   const grid2Container = useRef();
+
   return (
-  <section className="c-space section-spacing">
-    <h2 className="text-heading">About Me</h2>
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-6 
-    md:auto-rows-[18rem] mt-12">
-     {/* Grid 1 */}
-    <div className="flex items-end grid-default-color
-    grid-1">
-        <img
-        src="/assets/coding-pov.png"
-        className="absolute scale-[1.75] -right-[5rem] -top-
-        [1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-
-        [2.5]"
-        />
-          <div className="z-10">
-            <p className="headtext">Hi, I'm Jikhil Reji</p>
-            <p className="subtext" style={{ textAlign: "justify" }}>
+    <section className="c-space section-spacing">
+      <h2 className="text-heading">About Me</h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
+
+        {/* Grid 1 */}
+        <div className="relative flex items-end grid-default-color grid-1">
+          {/* Background Image */}
+          <img
+            src="/assets/coding-pov.png"
+            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+          />
+
+          {/* Foreground Content */}
+          <div className="z-10 flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <p className="headtext">Hi, I'm Jikhil Reji</p>
+              {/* Avatar with Popup */}
+              <AvatarWithPopup popupSrc="/jikhil2.jpg" />
+            </div>
+
+            <p className="subtext text-justify">
               I’m a full stack developer with experience in building scalable web applications,
               designing clean and intuitive user interfaces, and working with cloud infrastructure
               and system administration. My expertise spans frontend and backend development with modern
               technologies, enabling me to deliver reliable and user-focused digital solutions end to end.
             </p>
           </div>
-          <div className="absolute inset-x-0 pointer-evets-none 
-          -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" 
-         />
-        </div>  
-    {/* Grid 2 */}
-     <div className="grid-default-color 
-     grid-2">
-        <div ref={grid2Container} className="flex 
-        items-center justify-center
-        w-full h-full">
-            <p className="flex items-end 
-            text-5xl text-gray-500">
-              CODE IS CRAFT
-            </p>
-            <Card 
-             style={{ rotate: "75deg", top: "30%", left: "20%" }}
-            text="GRASP" 
-            containerRef={grid2Container}
-            />
-            <Card 
-             style={{ rotate: "-30deg", top: "60%", left: "45%" }}
-            text="SOLID"
-            containerRef={grid2Container}
-            />
-            <Card 
-             style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-            text="Design Patterns"
-            containerRef={grid2Container}
-            />
-            <Card 
-             style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-            text="Design Principles" 
-            containerRef={grid2Container}
-            />
-            <Card 
-           style={{ rotate: "30deg", top: "10%", left: "38%" }}  
-           text="SRP" 
-           containerRef={grid2Container}
-           />
-              <Card 
-           style={{ rotate: "30deg", top: "70%", left: "70%" }}  
-           image="/assets/logos/react.svg" 
-           containerRef={grid2Container}
-           />
-                <Card 
-           style={{ rotate: "-45deg", top: "70%", left: "25%" }}  
-           image="/assets/logos/azure.svg" 
-           containerRef={grid2Container}
-           />
-           <Card 
-           style={{ rotate: "-45deg", top: "5%", left: "10%" }}  
-           image="/assets/logos/figma.svg"
-           containerRef={grid2Container}
-           />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
         </div>
-     </div>
-    {/* Grid 3 */}
-    <div className="grid-black-color grid-3">
+
+        {/* Grid 2 */}
+        <div className="grid-default-color grid-2">
+          <div ref={grid2Container} className="flex items-center justify-center w-full h-full">
+            <p className="flex items-end text-5xl text-gray-500">CODE IS CRAFT</p>
+            <Card style={{ rotate: "75deg", top: "30%", left: "20%" }} text="GRASP" containerRef={grid2Container} />
+            <Card style={{ rotate: "-30deg", top: "60%", left: "45%" }} text="SOLID" containerRef={grid2Container} />
+            <Card style={{ rotate: "90deg", bottom: "30%", left: "70%" }} text="Design Patterns" containerRef={grid2Container} />
+            <Card style={{ rotate: "-45deg", top: "55%", left: "0%" }} text="Design Principles" containerRef={grid2Container} />
+            <Card style={{ rotate: "30deg", top: "10%", left: "38%" }} text="SRP" containerRef={grid2Container} />
+            <Card style={{ rotate: "30deg", top: "70%", left: "70%" }} image="/assets/logos/react.svg" containerRef={grid2Container} />
+            <Card style={{ rotate: "-45deg", top: "70%", left: "25%" }} image="/assets/logos/azure.svg" containerRef={grid2Container} />
+            <Card style={{ rotate: "-45deg", top: "5%", left: "10%" }} image="/assets/logos/figma.svg" containerRef={grid2Container} />
+          </div>
+        </div>
+
+        {/* Grid 3 */}
+        <div className="grid-black-color grid-3">
           <div className="z-10 w-[50%]">
             <p className="headtext">Time Zone</p>
             <p className="subtext text-justify">
-Stationed in Berlin, Germany 🚀 but always just a click away
-— whether remote or in-person
-I always love to build cool things with great teams.
+              Stationed in Berlin, Germany 🚀 but always just a click away
+              — whether remote or in-person
+              I always love to build cool things with great teams.
             </p>
           </div>
           <figure className="absolute left-[38%] top-[15%]">
             <Globe />
           </figure>
-    </div>
+        </div>
 
-    {/* Grid 4 */}
-<div className="grid-special-color grid-4">
-  <div className="flex flex-col items-center justify-center gap-4 size-full">
-    <p className="text-center headtext">
-      Found your developer. Let’s connect! 😎
-    </p>
-    <SwipeActionButton 
-      email="jikhilreji@gmail.com" 
-      resumeUrl="/assets/Jikhil_Reji_Resume.pdf" 
-    />
-  </div>
-</div>
+        {/* Grid 4 */}
+        <div className="grid-special-color grid-4">
+          <div className="flex flex-col items-center justify-center gap-4 size-full">
+            <p className="text-center headtext">
+              Found your developer. Let’s connect! 😎
+            </p>
+            <SwipeActionButton email="jikhilreji@gmail.com" resumeUrl="/assets/Jikhil_Reji_Resume.pdf" />
+          </div>
+        </div>
 
-
-      {/* Grid 5 */}
-    <div className="grid-default-color grid-5">
-      <div className="z-10 w-[50%]">
-        <p className="headText">Teck Stack</p>
-           <p className="subtext text-justify">
-        I specialize in languages, frameworks, and tools to create intuitive user experiences, 
-        build robust full-stack applications, and manage secure IT and cloud systems.
-           </p>
+        {/* Grid 5 */}
+        <div className="grid-default-color grid-5">
+          <div className="z-10 w-[50%]">
+            <p className="headText">Teck Stack</p>
+            <p className="subtext text-justify">
+              I specialize in languages, frameworks, and tools to create intuitive user experiences, 
+              build robust full-stack applications, and manage secure IT and cloud systems.
+            </p>
+          </div>
+          <div className="absolute inset-y-0 md:inset-y-9 w-full start-[50%] md:scale-125">
+            <Frameworks />
+          </div>
+        </div>
       </div>
-      <div className="absolute inset-y-0 md:inset-y-9 w-full
-      h-full start-[50%] md:scale-125" >
-        <Frameworks />
-
-      </div>
-    </div>
-    </div>
-  </section>
-    );
+    </section>
+  );
 };
 
 export default About;
