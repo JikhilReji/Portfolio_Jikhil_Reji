@@ -14,32 +14,33 @@ const About = () => {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
 
         {/* Grid 1 */}
-        <div className="relative flex items-end grid-default-color grid-1">
-          {/* Background Image */}
-          <img
-            src="/assets/coding-pov.png"
-            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
-          />
+<div className="relative flex flex-col md:flex-row items-start md:items-end grid-default-color grid-1 pt-8 md:pt-0">
+  {/* Background Image */}
+  <img
+    src="/assets/coding-pov.png"
+    className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+  />
 
-          {/* Foreground Content */}
-          <div className="z-10 flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <p className="headtext">Hi, I'm Jikhil Reji</p>
-              {/* Avatar with Popup */}
-              <AvatarWithPopup popupSrc="/jikhil2.jpg" />
-            </div>
+  {/* Foreground Content */}
+  <div className="z-10 flex flex-col gap-4 w-full px-4 md:px-0">
+    <div className="flex flex-wrap items-center gap-3">
+      <p className="headtext">Hi, I'm Jikhil Reji</p>
+      {/* Avatar with Popup */}
+      <AvatarWithPopup popupSrc="/jikhil2.jpg" />
+    </div>
 
-            <p className="subtext text-justify">
-              I’m a full stack developer with experience in building scalable web applications,
-              designing clean and intuitive user interfaces, and working with cloud infrastructure
-              and system administration. My expertise spans frontend and backend development with modern
-              technologies, enabling me to deliver reliable and user-focused digital solutions end to end.
-            </p>
-          </div>
+    <p className="subtext text-justify mt-2 md:mt-0">
+      I’m a full stack developer with experience in building scalable web applications,
+      designing clean and intuitive user interfaces, and working with cloud infrastructure
+      and system administration. My expertise spans frontend and backend development with modern
+      technologies, enabling me to deliver reliable and user-focused digital solutions end to end.
+    </p>
+  </div>
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
-        </div>
+  {/* Gradient Overlay */}
+  <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
+</div>
+
 
         {/* Grid 2 */}
         <div className="grid-default-color grid-2">
