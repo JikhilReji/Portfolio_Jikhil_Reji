@@ -30,10 +30,9 @@ const About = () => {
     </div>
 
     <p className="subtext text-justify mt-2 md:mt-0">
-      I’m a full stack developer with experience in building scalable web applications,
-      designing clean and intuitive user interfaces, and working with cloud infrastructure
-      and system administration. My expertise spans frontend and backend development with modern
-      technologies, enabling me to deliver reliable and user-focused digital solutions end to end.
+I’m a full stack developer passionate about building scalable web applications and designing clean, 
+intuitive user interfaces. I also work with cloud infrastructure and system administration, covering
+both frontend and backend technologies to deliver reliable, user-focused digital solutions from start to finish.      
     </p>
   </div>
 
