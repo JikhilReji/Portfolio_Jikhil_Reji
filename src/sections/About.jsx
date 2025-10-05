@@ -12,9 +12,8 @@ const About = () => {
     <section className="c-space section-spacing">
       <h2 className="text-heading">About Me</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
-
-        {/* Grid 1 */}
-<div className="relative flex flex-col md:flex-row items-start md:items-end grid-default-color grid-1 pt-8 md:pt-0">
+{/* Grid 1 */}
+<div className="relative flex items-start md:items-end grid-default-color grid-1 min-h-[24rem] md:min-h-[18rem] lg:min-h-[18rem] p-4 md:p-0">
   {/* Background Image */}
   <img
     src="/assets/coding-pov.png"
@@ -22,23 +21,30 @@ const About = () => {
   />
 
   {/* Foreground Content */}
-  <div className="z-10 flex flex-col gap-4 w-full px-4 md:px-0">
-    <div className="flex flex-wrap items-center gap-3">
+  <div className="z-10 flex flex-col gap-2 md:gap-4 mt-4 md:mt-0">
+    <div className="flex flex-col md:flex-row items-center gap-3">
       <p className="headtext">Hi, I'm Jikhil Reji</p>
       {/* Avatar with Popup */}
       <AvatarWithPopup popupSrc="/jikhil2.jpg" />
     </div>
 
-    <p className="subtext text-justify mt-2 md:mt-0">
-I’m a full stack developer passionate about building scalable web applications and designing clean, 
-intuitive user interfaces. I also work with cloud infrastructure and system administration, covering
-both frontend and backend technologies to deliver reliable, user-focused digital solutions from start to finish.      
+    <p className="subtext text-justify">
+I’m a full stack developer with a passion for building scalable web
+ applications and crafting clean, intuitive user interfaces. I focus on
+  delivering seamless UI/UX experiences while leveraging my skills in
+   cloud infrastructure and system administration. With expertise in 
+   both frontend and backend technologies, I ensure that every project
+    I work on is reliable, efficient, and user-focused, providing 
+    end-to-end digital solutions that meet both functional and design
+     goals.
     </p>
   </div>
 
   {/* Gradient Overlay */}
   <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
 </div>
+
+
 
 
         {/* Grid 2 */}
