@@ -10,9 +10,11 @@ export const myProjects = [
       "Implemented a fully functional contact form with EmailJS for seamless communication.",
       "Optimized development and performance with Vite, ensuring lightning-fast builds and smooth deployment.",
     ],
-    href: "",
+    href: "https://github.com/JikhilReji/Portfolio_Jikhil_Reji",
     logo: "",
     image: "/assets/projects/3D-portfolio.jpg",
+     liveLinkText: "Hey, the site is alive! 🚀", // new property
+     liveLinkHref: "https://stunning-flan-75b789.netlify.app/", // new property
     tags: [
       {
         id: 1,
@@ -47,9 +49,12 @@ export const myProjects = [
       "Integrated live chat support to improve customer experience and provide instant assistance",
       "Enhanced shopping workflows with secure forms, intuitive navigation, and responsive design.",
     ],
-    href: "https://jikhilreji.github.io/CakeFactory-github.io/",
+    href: "https://github.com/JikhilReji/CakeFactory-github.io",
     logo: "",
     image: "/assets/projects/E-commerce.jpg",
+     liveLinkText: "Hey, the site is alive! 🚀", // new property
+     liveLinkHref: "https://jikhilreji.github.io/CakeFactory-github.io/", // new property
+    
     tags: [
       {
         id: 1,
@@ -89,9 +94,11 @@ export const myProjects = [
       "Managed and queried relational data efficiently with MySQL, enhancing performance and reliability.",
       "Added real-time monitoring, analytics dashboards, and visual reporting to improve admin decision-making.",
     ],
-    href: "",
+    href: "https://github.com/JikhilReji/Admin-Engine",
     logo: "",
     image: "/assets/projects/admin-panel.png",
+     liveLinkText: "Hey, the site is alive! 🚀", // new property
+     liveLinkHref: "https://jikhilreji.github.io/Admin-Engine/", // new property
     tags: [
       {
         id: 1,
@@ -131,7 +138,7 @@ export const myProjects = [
       "Integrated Firebase for real-time data synchronization and SQLite for local data management.",
       "Implemented a clean and user-friendly interface using Android Studio and Java for seamless mobile experience.",
     ],
-    href: "",
+    href: "https://github.com/JikhilReji/Doctor-Finder",
     logo: "",
     image: "/assets/projects/dr.finder.png",
     tags: [
@@ -146,17 +153,17 @@ export const myProjects = [
         path: "/assets/logos/java.svg",
       },
       {
-        id: 2,
+        id: 3,
         name: "SQLite",
         path: "/assets/logos/sqlite.svg",
       },
       {
-        id: 3,
+        id: 4,
         name: "Firebase",
         path: "/assets/logos/firebase.svg",
       },
       {
-        id: 4,
+        id: 5,
         name: "Google Map API",
         path: "/assets/logos/map.svg",
       },
@@ -173,7 +180,7 @@ export const myProjects = [
       "Designed a responsive and interactive frontend with intuitive navigation and e-book access for students.",
       "Integrated secure backend functionality with database management for user credentials, tutor information, and booking records.",
     ],
-    href: "",
+    href: "https://github.com/JikhilReji/Online_Tutor",
     logo: "",
     image: "/assets/projects/online-tutor.png",
     tags: [
@@ -215,13 +222,13 @@ export const myProjects = [
       "Designed heatmaps and visual analytics with Matplotlib, Seaborn, and Tableau to highlight long-term climate trends.",
       "Integrated machine learning workflows in Google Colab, ensuring reproducibility and efficient experimentation.",
     ],
-    href: "",
+    href: "https://github.com/JikhilReji/EcoForecast/tree/main",
     logo: "",
     image: "/assets/projects/ecoforecast.png",
     tags: [
       {
         id: 1,
-        name: "Python (Pandas, NumPy, Scikit-learn)",
+        name: "Python",
         path: "/assets/logos/python.svg",
       },
       {
@@ -231,7 +238,7 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: "Google Colab / Jupyter",
+        name: "Google Colab",
         path: "/assets/logos/google colab.png",
       },
       {

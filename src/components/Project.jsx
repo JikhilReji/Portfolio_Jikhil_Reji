@@ -1,7 +1,7 @@
 import ProjectDetails from "./ProjectDetails";
 import React, { useState } from "react";
 const Project = ({ title, description, subDescription, href, 
-image, tags, setPreview, }) => {
+image, tags, setPreview, liveLinkText, liveLinkHref }) => {
 const [isHidden, setIsHidden] = useState(false);
   return (
       <>
@@ -41,6 +41,8 @@ const [isHidden, setIsHidden] = useState(false);
           tags={tags}
           href={href}
           closeModal={() => setIsHidden(false)}
+          liveLinkText={liveLinkText}   
+          liveLinkHref={liveLinkHref} 
      />
      )}
     </>

@@ -7,6 +7,8 @@ const ProjectDetails = ({
   tags,
   href,
   closeModal,
+  liveLinkText,
+  liveLinkHref, 
 }) => {
   return (
   <div className="fixed inset-0 z-50 flex items-center justify-center 
@@ -32,6 +34,7 @@ const ProjectDetails = ({
         <p className="mb-3 font-normal text-neutral-400 text-justify leading-relaxed tracking-wide">
   {description}
 </p>
+
 {subDescription.map((subDesc, index) => (
   <p
     key={index}
@@ -41,7 +44,18 @@ const ProjectDetails = ({
   </p>
 ))}
       {/*   End */}
-
+{/* New live link */}
+  {liveLinkText && liveLinkHref && (
+    <a
+      href={liveLinkHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-4 px-4 py-2 bg-blue-950 hover:bg-blue-800 text-white rounded-lg font-medium transition"
+    >
+      {liveLinkText}
+    </a>
+  )}
+    {/* End */}
           <div className="flex items-center justify-between mt-4"> 
            <div className="flex gap-3">
               {tags.map((tag) => (

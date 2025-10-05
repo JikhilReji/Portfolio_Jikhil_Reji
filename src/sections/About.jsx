@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Card from "../components/Card";
 import { Globe } from "../components/globe";
-import CopyEmailButton from "../components/CopyEmailButton";
+import SwipeActionButton from "../components/SwipeActionButton";
 import { Frameworks } from "../components/Frameworks";
 const About = () => {
   const grid2Container = useRef();
@@ -98,16 +98,21 @@ I always love to build cool things with great teams.
             <Globe />
           </figure>
     </div>
-      {/* Grid 4 */}
-    <div className="grid-special-color grid-4">
-      <div className="flex flex-col items-center
-      justify-center gap-4 size-full">
-        <p className="text-center headtext">
-          Do you want to start a project together?
-        </p>
-        <CopyEmailButton />
-      </div>
-    </div>
+
+    {/* Grid 4 */}
+<div className="grid-special-color grid-4">
+  <div className="flex flex-col items-center justify-center gap-4 size-full">
+    <p className="text-center headtext">
+      Found your developer. Let’s connect! 😎
+    </p>
+    <SwipeActionButton 
+      email="jikhilreji@gmail.com" 
+      resumeUrl="/assets/Jikhil_Reji_Resume.pdf" 
+    />
+  </div>
+</div>
+
+
       {/* Grid 5 */}
     <div className="grid-default-color grid-5">
       <div className="z-10 w-[50%]">
