@@ -74,17 +74,22 @@ export const Timeline = ({ data }) => {
                 </div>
               </div>
 
-              <div className="relative w-full pl-20 pr-4 md:pl-4">
+              <div className="relative w-full max-w-full pl-20 pr-4 md:pl-4">
+
                 <div className="block mb-4 md:hidden">
   <h3 className="text-xl font-semibold text-neutral-200">{item.title}</h3>
   <p className="text-sm text-neutral-400">{item.company || item.job}</p>
   <p className="text-xs text-neutral-500 mt-1">{item.date}</p>
 </div>
-                {item.contents.map((content, idx) => (
-                  <p className="mb-3 font-normal text-neutral-400" key={idx}>
-                    {content}
-                  </p>
-                ))}
+               {item.contents.map((content, idx) => (
+  <p
+    key={idx}
+    className="mb-3 font-normal text-neutral-400 text-justify leading-relaxed tracking-wide"
+  >
+    {content}
+  </p>
+))}
+
               </div>
             </div>
           );

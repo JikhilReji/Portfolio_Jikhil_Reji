@@ -25,15 +25,23 @@ const ProjectDetails = ({
       <img src={image} alt={title} className="w-full 
       rounded-t-2xl" />
       <div className="p-5">
+
         <h5 className="mb-2 text-2xl font-bold text-white">
           {title}</h5>
-        <p className="mb-3 font-normal text-neutral-400">
-          {description}</p>
-          {subDescription.map((subDesc, index) =>( 
-            <p key={index} className= "mb-3 font-normal text-neutral-400">
-            {subDesc}
-            </p>
-          ))}
+        {/*   Justify description */}
+        <p className="mb-3 font-normal text-neutral-400 text-justify leading-relaxed tracking-wide">
+  {description}
+</p>
+{subDescription.map((subDesc, index) => (
+  <p
+    key={index}
+    className="mb-3 font-normal text-neutral-400 text-justify leading-relaxed tracking-wide"
+  >
+    {subDesc}
+  </p>
+))}
+      {/*   End */}
+
           <div className="flex items-center justify-between mt-4"> 
            <div className="flex gap-3">
               {tags.map((tag) => (
