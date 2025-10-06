@@ -25,7 +25,7 @@ const About = () => {
     <div className="flex flex-col md:flex-row items-center gap-3">
       <p className="headtext">Hi, I'm Jikhil Reji</p>
       {/* Avatar with Popup */}
-      <AvatarWithPopup popupSrc="/jikhil2.jpg" />
+      <AvatarWithPopup popupSrc="/Jikhil3.png" />
     </div>
 
     <p className="subtext text-justify">
