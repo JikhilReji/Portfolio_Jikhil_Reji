@@ -136,3 +136,9 @@ body {
 .field-input-focus {
   @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20;
 }
+
+/* Smooth scrolling for all browsers and containers */
+html, body, #root, main {
+  scroll-behavior: smooth;
+}
+

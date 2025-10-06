@@ -41,7 +41,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section
+    <section id="projects"
       onMouseMove={handleMouseMove}
       onTouchMove={handleMouseMove}
       className="relative c-space section-spacing"

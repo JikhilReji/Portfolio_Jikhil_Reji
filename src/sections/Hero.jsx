@@ -11,33 +11,36 @@ import Loader from "../components/Loader";
 
 const Hero = () => { 
   const isMobile = useMediaQuery({ maxWidth: 853 });
+  const isTablet = useMediaQuery({ minWidth: 854, maxWidth: 1200 });
+  const disableInteraction = isMobile || isTablet; // disable controls on mobile + tablet
+
+  // Adjust astronaut position dynamically
+  const astronautPosition = isMobile
+    ? [0, -1.5, 0]
+    : isTablet
+    ? [0.8, -1, 0]  // slightly more centered on tablet
+    : [1.3, -1, 0]; // default desktop position
+
+  const astronautScale = isMobile ? 0.23 : 0.3;
 
   return (
-    <section className="flex items-start justify-center
-      md:items-start md:justify-start min-h-screen overflow-hidden
-      c-space">
+    <section
+      id="home"
+      className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space"
+    >
       <HeroText />
       <ParallaxBackground />
 
-      <figure 
-        className="absolute inset-0"
-        style={{ width: "100vw", height: "100vh" }}
-      >
+      <figure className="absolute inset-0" style={{ width: "100vw", height: "100vh" }}>
         <Canvas camera={{ position: [0, 1, 3] }}>
           <Suspense fallback={<Loader />}>
             <Float>
-              <Astronaut 
-                scale={isMobile ? 0.23 : 0.3} 
-                position={isMobile ? [0, -1.5, 0] : [1.3, -1, 0]} 
-              />
+              <Astronaut scale={astronautScale} position={astronautPosition} />
             </Float>
 
-            {/* Conditionally enable interactive controls only on desktop */}
-            {!isMobile && (
-              <OrbitControls
-                enableZoom={false}   // disables zoom on scroll
-                enablePan={false}    // optional: prevents dragging/panning
-              />
+            {/* Enable controls only on desktop > 1200px */}
+            {!disableInteraction && (
+              <OrbitControls enableZoom={false} enablePan={false} />
             )}
 
             <Rig />
