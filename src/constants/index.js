@@ -14,7 +14,7 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/3D-portfolio.jpg",
      liveLinkText: "Hey, the site is alive! 🚀", // new property
-     liveLinkHref: "https://stunning-flan-75b789.netlify.app/", // new property
+     liveLinkHref: "https://portfolio-jikhil-reji.onrender.com/", // new property
     tags: [
       {
         id: 1,
