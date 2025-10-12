@@ -83,7 +83,7 @@ I’m a full stack developer with a passion for building scalable web
             <p className="text-center headtext">
               Found your developer. Let’s connect! 😎
             </p>
-            <SwipeActionButton email="jikhilreji@gmail.com" resumeUrl="/assets/Jikhil_Reji.pdf" />
+            <SwipeActionButton email="jikhilreji@gmail.com" resumeUrl="/assets/Jikhil Reji.pdf" />
           </div>
         </div>
 

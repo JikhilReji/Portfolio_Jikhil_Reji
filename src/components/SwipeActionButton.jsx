@@ -15,7 +15,7 @@ const SwipeActionButton = ({ email, resumeUrl }) => {
       // Swiped right → Download Resume
       const link = document.createElement("a");
       link.href = resumeUrl;
-      link.download = "Jikhil_Reji.pdf";
+      link.download = "Jikhil Reji.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
